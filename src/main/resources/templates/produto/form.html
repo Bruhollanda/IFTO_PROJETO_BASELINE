@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<h1>FORM</h1>
+<form th:action="${product.id == 0} ? @{/produtos/cadastro} : @{/produtos/update}" th:object="${product}" method="post">
+    <input type="hidden" th:field="*{id}">
+    <input type="text" th:field="*{descricao}">
+    <input type="number" th:field="*{valor}">
+    <input type="submit" value="Enviar">
+</form>
+
+</body>
+</html>
